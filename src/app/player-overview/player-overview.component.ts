@@ -49,6 +49,14 @@ export class PlayerOverviewComponent {
     else {
         for(let i = 0; i < this.numberOfPlayers(); i++) {
           const isImposter = i+1 == imposter;
+          const playerExists = this.players()[i] !== undefined;
+          if(!playerExists) {
+            this.players().push({
+              name: 'Spieler ' + (i+1),
+              isImposter: false,
+              word: ''
+            });
+          }
           this.players()[i].isImposter = isImposter;
           this.players()[i].word = isImposter ? '' : word
         }
