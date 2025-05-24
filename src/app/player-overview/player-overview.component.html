@@ -1,34 +1,73 @@
+<div style="display: flex; flex-direction: column; gap: 1rem; padding: 1rem; max-width: 600px; margin: auto;">
+  <h1>Imposter</h1> 
+  <mat-form-field appearance="fill" style="width: 100%;">
+    <mat-label>Anzahl der Spieler</mat-label>
+    <input
+      matInput
+      type="number"
+      [(ngModel)]="numberOfPlayers"
+      (ngModelChange)="initializeGame()"
+      (change)="initializeGame()"
+    />
+  </mat-form-field>
 
-<div style="display: flex; flex-direction: column; gap: 1rem; padding: 1rem;">
-    <mat-form-field>
-        <mat-label>Anzahl der Spieler</mat-label>
-        <input matInput type="number" [(ngModel)]="numberOfPlayers" (ngModelChange)="initializeGame()">
-      </mat-form-field>
-    @for (player of players(); track $index) {
-      <mat-card style="padding: 1rem;">
-        <div style="display: flex; flex-direction: column; gap: 1rem;">
-          <mat-form-field appearance="fill">
-            <mat-label>Spielername</mat-label>
-            <input
-              matInput
-              [(ngModel)]="player.name"
-              (ngModelChange)="saveToLocalStorage()"
-              name="playerName{{$index}}"
-              placeholder="Name eingeben"
-            />
-          </mat-form-field>
-  
+  @for (player of players(); track $index) {
+    <mat-card style="padding: 1rem; width: 100%;">
+      <div style="display: flex; flex-direction: column; gap: 1rem;">
+        <mat-form-field appearance="fill" style="width: 100%;">
+          <mat-label>Spielername</mat-label>
+          <input
+            matInput
+            [(ngModel)]="player.name"
+            (ngModelChange)="saveToLocalStorage()"
+            name="playerName{{$index}}"
+            placeholder="Name eingeben"
+          />
+        </mat-form-field>
+
+        @if (player.reveal) {
+          @if(player.isImposter) {
+            <b style="color: darkred;">Imposter</b>
+
+          } @else {
+          <b>Zivilist</b>
+          }
+        }
+
+        <div style="display: flex; flex-direction: column; gap: 0.5rem;">
           <button
             mat-raised-button
             color="primary"
             (click)="showImposterInfo(player)"
-            style="align-self: flex-start;"
+            style="align-self: stretch;"
           >
             Info anzeigen
           </button>
+          <button
+            mat-raised-button
+            (click)="reveal(player)"
+            [name]="'player' + $index"
+            style="align-self: stretch;"
+          >
+            Auflösen
+          </button>
         </div>
-      </mat-card>
-    }
-  <button mat-raised-button (click)="initializeGame()">Neues Spiel</button>
-  </div>
 
+        <div style="text-align: right; font-size: 0.9rem; color: gray;">
+          Position {{player.position + 1}}
+        </div>
+      </div>
+    </mat-card>
+  }
+
+  <button
+    mat-raised-button
+    color="accent"
+    (click)="initializeGame()"
+    style="align-self: center; width: 100%; max-width: 300px;"
+  >
+    Neues Spiel
+  </button>
+  <small style="color: lightgrey">by René Bärnreuther</small>
+
+</div>

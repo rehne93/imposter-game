@@ -8,12 +8,15 @@ export class GameUtil {
     }
 
 
-    public static getRandomWord(): string {
-        const words: string[] = Wordlist.WORDS;
+    public static getRandomWord(): Word {
+        const words: Word[] = Wordlist.WORDS;
         const randomNumber = this.randomNumber(words.length);
-
-
         return words[randomNumber-1];
 
     }
+}
+
+export interface Word {
+    wort: string;
+    hinweis: string;
 }
