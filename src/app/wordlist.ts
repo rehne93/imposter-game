@@ -465,7 +465,400 @@ static WORDS = [
         {
           "wort": "Stranger Things",
           "hinweis": "Mystery-Serie mit übernatürlichen Elementen"
-        }
+        },
+{
+    "wort": "Pilot",
+    "hinweis": "Trägt Verantwortung in luftiger Höhe"
+  },
+  {
+    "wort": "Fußball",
+    "hinweis": "Wird oft auf Rasen entschieden"
+  },
+  {
+    "wort": "Kaktus",
+    "hinweis": "Kommt mit wenig aus"
+  },
+  {
+    "wort": "Tiger",
+    "hinweis": "Elegant und gefährlich zugleich"
+  },
+  {
+    "wort": "Schwimmen",
+    "hinweis": "Spiel mit Auftrieb und Bewegung"
+  },
+  {
+    "wort": "Elefant",
+    "hinweis": "Groß, grau und oft erinnert"
+  },
+  {
+    "wort": "Basketball",
+    "hinweis": "Springen und Zielen sind gefragt"
+  },
+  {
+    "wort": "Boxen",
+    "hinweis": "Ein Duell mit Regeln und Fäusten"
+  },
+  {
+    "wort": "Trompete",
+    "hinweis": "Ein Instrument mit Durchsetzungskraft"
+  },
+  {
+    "wort": "Arzt",
+    "hinweis": "Kennt sich mit dem Inneren aus"
+  },
+  {
+    "wort": "Lehrer",
+    "hinweis": "Gestaltet Lernen"
+  },
+  {
+    "wort": "Geige",
+    "hinweis": "Wird mit einem Bogen berührt"
+  },
+  {
+    "wort": "Rose",
+    "hinweis": "Schönheit mit Schutzmechanismus"
+  },
+  {
+    "wort": "Zebra",
+    "hinweis": "Ein Muster in Bewegung"
+  },
+  {
+    "wort": "Surfen",
+    "hinweis": "Balancieren auf Bewegtem"
+  },
+  {
+    "wort": "Feuerwehrmann",
+    "hinweis": "Agiert, wenn es brenzlig wird"
+  },
+  {
+    "wort": "Löwe",
+    "hinweis": "Symbol für Stärke und Majestät"
+  },
+  {
+    "wort": "Tennis",
+    "hinweis": "Schnelle Reaktion auf kleinem Feld"
+  },
+  {
+    "wort": "Klarinette",
+    "hinweis": "Klingt warm, aus Holz geboren"
+  },
+  {
+    "wort": "Lavendel",
+    "hinweis": "Duft, der beruhigt"
+  },
+  {
+    "wort": "Notarzt",
+    "hinweis": "Handelt, wenn Sekunden zählen"
+  },
+  {
+    "wort": "Gitarre",
+    "hinweis": "Saitenspiel mit vielen Gesichtern"
+  },
+  {
+    "wort": "Fuchs",
+    "hinweis": "Listig in vielen Geschichten"
+  },
+  {
+    "wort": "Handball",
+    "hinweis": "Schnell, präzise und kraftvoll"
+  },
+  {
+    "wort": "Kranich",
+    "hinweis": "Zieht mit dem Wind"
+  },
+  {
+    "wort": "Sanitäter",
+    "hinweis": "Helfende Hände unterwegs"
+  },
+  {
+    "wort": "Posaune",
+    "hinweis": "Verändert ihren Klang durch Länge"
+  },
+  {
+    "wort": "Orchidee",
+    "hinweis": "Zart, aber anspruchsvoll"
+  },
+  {
+    "wort": "Känguru",
+    "hinweis": "Springt durchs Leben"
+  },
+  {
+    "wort": "Ringen",
+    "hinweis": "Körper spricht ohne Worte"
+  },
+  {
+    "wort": "Saxophon",
+    "hinweis": "Zwischen Jazz und Leidenschaft"
+  },
+  {
+    "wort": "Ahorn",
+    "hinweis": "Sein Blatt kennt man"
+  },
+  {
+    "wort": "Trommel",
+    "hinweis": "Ruf des Rhythmus"
+  },
+  {
+    "wort": "Pfau",
+    "hinweis": "Farbenpracht zur Schau gestellt"
+  },
+  {
+    "wort": "Volleyball",
+    "hinweis": "Spiel über die Linie"
+  },
+  {
+    "wort": "Chirurg",
+    "hinweis": "Feinarbeit im Innersten"
+  },
+  {
+    "wort": "Schnecke",
+    "hinweis": "Trägt ihr Zuhause"
+  },
+  {
+    "wort": "Eiche",
+    "hinweis": "Steht fest im Leben"
+  },
+  {
+    "wort": "Cello",
+    "hinweis": "Tief, warm und tragend"
+  },
+  {
+    "wort": "Bauer",
+    "hinweis": "Arbeitet mit der Natur"
+  },
+  {
+    "wort": "Lama",
+    "hinweis": "Exotisch und oft spuckfreudig"
+  },
+  {
+    "wort": "Hockey",
+    "hinweis": "Schläger und Taktik im Spiel"
+  },
+  {
+    "wort": "Horn",
+    "hinweis": "Rund, laut und traditionell"
+  },
+  {
+    "wort": "Bambus",
+    "hinweis": "Leicht, aber stabil"
+  },
+  {
+    "wort": "Tierarzt",
+    "hinweis": "Heilt ohne Worte"
+  },
+  {
+    "wort": "Marathon",
+    "hinweis": "Ausdauer als Schlüssel"
+  },
+  {
+    "wort": "Pinguin",
+    "hinweis": "Eleganz im Eis"
+  },
+  {
+    "wort": "Panflöte",
+    "hinweis": "Klang aus vielen Röhren"
+  },
+  {
+    "wort": "Kompass",
+    "hinweis": "Zeigt eine Richtung an"
+  },
+  {
+    "wort": "Kunst",
+    "hinweis": "Drückt etwas ohne Worte aus"
+  },
+  {
+    "wort": "Logik",
+    "hinweis": "Ordnet Gedanken in klare Bahnen"
+  },
+  {
+    "wort": "Mut",
+    "hinweis": "Überwindet innere Hürden"
+  },
+  {
+    "wort": "Freiheit",
+    "hinweis": "Fehlt, wenn man eingeschränkt ist"
+  },
+  {
+    "wort": "Vertrauen",
+    "hinweis": "Basiert auf innerer Sicherheit"
+  },
+  {
+    "wort": "Zweifel",
+    "hinweis": "Hinterfragt das Offensichtliche"
+  },
+  {
+    "wort": "Wissen",
+    "hinweis": "Geht über bloße Information hinaus"
+  },
+  {
+    "wort": "Zeit",
+    "hinweis": "Vergeht, auch wenn man nichts tut"
+  },
+  {
+    "wort": "Raum",
+    "hinweis": "Wird betreten, gestaltet, genutzt"
+  },
+  {
+    "wort": "Ordnung",
+    "hinweis": "Bringt Struktur ins Chaos"
+  },
+  {
+    "wort": "Chaos",
+    "hinweis": "Fehlt es, wird es langweilig"
+  },
+  {
+    "wort": "Liebe",
+    "hinweis": "Verbindet ohne Bedingungen"
+  },
+  {
+    "wort": "Hoffnung",
+    "hinweis": "Bleibt, wenn wenig bleibt"
+  },
+  {
+    "wort": "Erinnerung",
+    "hinweis": "Lebt in Gedanken fort"
+  },
+  {
+    "wort": "Kreativität",
+    "hinweis": "Erfindet neue Wege"
+  },
+  {
+    "wort": "Geduld",
+    "hinweis": "Braucht Zeit und Ruhe"
+  },
+  {
+    "wort": "Stärke",
+    "hinweis": "Zeigt sich nicht nur körperlich"
+  },
+  {
+    "wort": "Gerechtigkeit",
+    "hinweis": "Strebt nach Ausgleich"
+  },
+  {
+    "wort": "Wahrheit",
+    "hinweis": "Bleibt, auch wenn sie verborgen ist"
+  },
+  {
+    "wort": "Ehre",
+    "hinweis": "Steht für Prinzipientreue"
+  },
+  {
+    "wort": "Neugier",
+    "hinweis": "Will wissen, was dahinter steckt"
+  },
+  {
+    "wort": "Verlust",
+    "hinweis": "Hinterlässt Leere"
+  },
+  {
+    "wort": "Traum",
+    "hinweis": "Kommt oft nachts, manchmal tags"
+  },
+  {
+    "wort": "Ziel",
+    "hinweis": "Liegt am Ende eines Weges"
+  },
+  {
+    "wort": "Chance",
+    "hinweis": "Muss erkannt und genutzt werden"
+  },
+  {
+    "wort": "Veränderung",
+    "hinweis": "Bringt Neues, nimmt Altes"
+  },
+  {
+    "wort": "Stille",
+    "hinweis": "Ist mehr als die Abwesenheit von Lärm"
+  },
+  {
+    "wort": "Bewegung",
+    "hinweis": "Kommt selten zur Ruhe"
+  },
+  {
+    "wort": "Verantwortung",
+    "hinweis": "Trägt, wer Entscheidungen trifft"
+  },
+  {
+    "wort": "Licht",
+    "hinweis": "Zeigt, was im Verborgenen liegt"
+  },
+  {
+    "wort": "Schatten",
+    "hinweis": "Entsteht dort, wo Licht fehlt"
+  },
+  {
+    "wort": "Kälte",
+    "hinweis": "Spürt man auf der Haut und im Herzen"
+  },
+  {
+    "wort": "Wärme",
+    "hinweis": "Kommt von innen oder außen"
+  },
+  {
+    "wort": "Glaube",
+    "hinweis": "Existiert auch ohne Beweis"
+  },
+  {
+    "wort": "Zufall",
+    "hinweis": "Lässt sich schwer planen"
+  },
+  {
+    "wort": "Sinn",
+    "hinweis": "Gibt Orientierung im Denken"
+  },
+  {
+    "wort": "Natur",
+    "hinweis": "Ist da, auch ohne Zutun"
+  },
+  {
+    "wort": "Technik",
+    "hinweis": "Erleichtert, was schwer ist"
+  },
+  {
+    "wort": "Sprache",
+    "hinweis": "Vermittelt Gedanken"
+  },
+  {
+    "wort": "Identität",
+    "hinweis": "Antwort auf die Frage: Wer bin ich?"
+  },
+  {
+    "wort": "Erfolg",
+    "hinweis": "Kommt oft nach Mühe"
+  },
+  {
+    "wort": "Misserfolg",
+    "hinweis": "Lehrt mehr als man denkt"
+  },
+  {
+    "wort": "Ritual",
+    "hinweis": "Wird wiederholt mit Bedeutung"
+  },
+  {
+    "wort": "Kultur",
+    "hinweis": "Spiegelt Lebensweisen"
+  },
+  {
+    "wort": "Moral",
+    "hinweis": "Leitet Handeln nach Werten"
+  },
+  {
+    "wort": "Gesetz",
+    "hinweis": "Gibt Regeln für das Zusammenleben"
+  },
+  {
+    "wort": "Zukunft",
+    "hinweis": "Liegt vor uns"
+  },
+  {
+    "wort": "Vergangenheit",
+    "hinweis": "Formt, was wir sind"
+  },
+  {
+    "wort": "Gegenwart",
+    "hinweis": "Passiert genau jetzt"
+  }
+
       
   ]  
 }
