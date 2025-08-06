@@ -1,19 +1,20 @@
-<h2 mat-dialog-title> {{player().name}}</h2>
+<h2 mat-dialog-title>{{ player().name }}</h2>
 
 <mat-dialog-content>
-    <p>Du bist</p>
-    @if(player().isImposter) {
-        <h3>der Imposter</h3>
-    } @else {
-        <h3>ein Zivilist</h3>
-        <hr>
-        <p>Das Wort ist</p>
-        <h3>{{player().word.wort}}</h3>
-    }   
-    <small>Hinweis: {{player().word.hinweis}}</small>
-    
+  <p>Du bist</p>
+  @if(player().isImposter) {
+  <h3>der Imposter</h3>
+  } @else {
+  <h3>ein Zivilist</h3>
+  <hr />
+  <p>Das Wort ist</p>
+  <h3>{{ player().word.wort }}</h3>
+  } @if (player().isImposter && showHintsOnlyForImposter() ||
+  !showHintsOnlyForImposter()) {
+  <small>Hinweis: {{ player().word.hinweis }}</small>
+  }
 </mat-dialog-content>
 
 <mat-dialog-actions>
-    <button mat-button [mat-dialog-close]>Ok</button>
+  <button mat-button [mat-dialog-close]>Ok</button>
 </mat-dialog-actions>

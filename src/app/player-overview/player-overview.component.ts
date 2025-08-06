@@ -7,116 +7,133 @@ import { MatDialog } from '@angular/material/dialog';
 import { PlayerWordInfoDialogComponent } from '../player-word-info-dialog/player-word-info-dialog.component';
 import { MatInput } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
-import { SureDialogComponent } from '../sure-dialog/sure-dialog.component';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-player-overview',
-  imports: [MatLabel, MatCard, MatButton, MatInput, FormsModule, MatFormField],
+  imports: [
+    MatLabel,
+    MatCard,
+    MatButton,
+    MatInput,
+    FormsModule,
+    MatFormField,
+    MatButtonToggleModule,
+    MatIconModule,
+  ],
   templateUrl: './player-overview.component.html',
-  styleUrl: './player-overview.component.css'
+  styleUrl: './player-overview.component.css',
 })
 export class PlayerOverviewComponent {
+  numberOfPlayers = model<number>(4);
+  players = model<Player[]>([]);
+  showHintsOnlyForImposter = signal<boolean>(false);
 
-   numberOfPlayers = model<number>(4);
-   players = model<Player[]>([]);
-   readonly dialog = inject(MatDialog);
+  readonly dialog = inject(MatDialog);
 
-   constructor() {
-      this.initializeGame();
-   }
+  constructor() {
+    this.initializeGame();
+  }
 
-   initializeGame(): void  {
+  initializeGame(): void {
     const playerData = this.retrieveFromLocalStorage();
     this.players.set(playerData);
     const imposter = GameUtil.randomNumber(this.numberOfPlayers());
     const word = GameUtil.getRandomWord();
-    console.log(word);
 
     // TODO: optimize this part
     // If no data is available we initialize empty
-    if(this.players().length !== this.numberOfPlayers()) {
+    if (this.players().length !== this.numberOfPlayers()) {
       const playerArray: Player[] = [];
 
-      for(let i = 0; i < this.numberOfPlayers(); i++) {
-        const isImposter = i+1 == imposter;
+      for (let i = 0; i < this.numberOfPlayers(); i++) {
+        const isImposter = i + 1 == imposter;
         playerArray.push({
-          name: 'Spieler ' + (i+1),
+          name: 'Spieler ' + (i + 1),
           isImposter: isImposter,
           word: word,
           reveal: false,
-          position: 0
-        })
+          position: 0,
+        });
       }
       this.players.set(playerArray);
     }
-      // otherwise we only change imposter and word
+    // otherwise we only change imposter and word
     else {
-        for(let i = 0; i < this.numberOfPlayers(); i++) {
-          const isImposter = i+1 == imposter;
-          const playerExists = this.players()[i] !== undefined;
-          if(!playerExists) {
-            this.players().push({
-              name: 'Spieler ' + (i+1),
-              isImposter: false,
-              word: {wort: '', hinweis: ''},
-              reveal: false,
-              position: 0
-            });
-          }
-          this.players()[i].isImposter = isImposter;
-          this.players()[i].word =  word;
+      for (let i = 0; i < this.numberOfPlayers(); i++) {
+        const isImposter = i + 1 == imposter;
+        const playerExists = this.players()[i] !== undefined;
+        if (!playerExists) {
+          this.players().push({
+            name: 'Spieler ' + (i + 1),
+            isImposter: false,
+            word: { wort: '', hinweis: '' },
+            reveal: false,
+            position: 0,
+          });
         }
+        this.players()[i].isImposter = isImposter;
+        this.players()[i].word = word;
+      }
     }
 
     this.shufflePositions();
     this.saveToLocalStorage();
-   }
+  }
 
+  shufflePositions(): void {
+    const indices = this.getRandomIndices(this.numberOfPlayers());
 
-   shufflePositions() : void {
-      const indices = this.getRandomIndices(this.numberOfPlayers());
+    for (let i = 0; i < this.numberOfPlayers(); i++) {
+      this.players()[i].position = indices[i];
+    }
+  }
 
-     for(let i = 0; i < this.numberOfPlayers(); i++) {
-        this.players()[i].position = indices[i];
-     }
-   }
-
-   getRandomIndices(n: number): number[] {
+  getRandomIndices(n: number): number[] {
     const indices = Array.from({ length: n }, (_, i) => i);
 
     // Fisher-Yates Shuffle
     for (let i = n - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [indices[i], indices[j]] = [indices[j], indices[i]];
+      const j = Math.floor(Math.random() * (i + 1));
+      [indices[i], indices[j]] = [indices[j], indices[i]];
     }
 
     return indices;
-}
+  }
 
-   showImposterInfo(player: Player): void {
+  showImposterInfo(player: Player): void {
     const dialogRef = this.dialog.open(PlayerWordInfoDialogComponent, {
-      data: {player: player}
+      data: {
+        player: player,
+        showHintsOnlyForImposter: this.showHintsOnlyForImposter(),
+      },
     });
-   }
+  }
 
-   reveal(player: Player): void {
+  reveal(player: Player): void {
     player.reveal = true;
-   }
+  }
 
-   
-   saveToLocalStorage(): void {
-    localStorage.setItem('imposter__playerlist', JSON.stringify(this.players()));
-   }
+  toggleShowHintsOnlyForImposter(): void {
+    this.showHintsOnlyForImposter.update((value) => !value);
+  }
 
-   retrieveFromLocalStorage(): Player[] {
-    const playerData = localStorage.getItem('imposter__playerlist')
-    if(!playerData) {
+  saveToLocalStorage(): void {
+    localStorage.setItem(
+      'imposter__playerlist',
+      JSON.stringify(this.players())
+    );
+  }
+
+  retrieveFromLocalStorage(): Player[] {
+    const playerData = localStorage.getItem('imposter__playerlist');
+    if (!playerData) {
       return [];
     }
     return JSON.parse(playerData);
-   }
+  }
 }
-
 
 export interface Player {
   name: string;
